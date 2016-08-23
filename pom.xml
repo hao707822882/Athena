@@ -9,6 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>AthenaModel</module>
+        <module>AthenaService</module>
+        <module>AthenaStreamUVHandler</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -2,6 +2,8 @@ package com.boom.athena.model;/**
  * Created by Administrator on 2016/8/23.
  */
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.util.Date;
@@ -13,8 +15,14 @@ import java.util.Date;
  * @comment 炸弹人数据平台
  * @date 2016/8/23
  */
-@Document(indexName = "Athena", type = "track", shards = 10, replicas = 0, refreshInterval = "1", createIndex = true)
-public class Track {
+@Document(indexName = "athena", type = "track", shards = 10, replicas = 0, refreshInterval = "1", createIndex = true)
+public class Track extends MessageBase {
+
+    @Id
+    private Long id;
+
+    @Version
+    private Long version;
 
     private String domain;
 
@@ -29,18 +37,32 @@ public class Track {
 
     private String value;
 
+    private Integer order;
+
+    private String client;
+
+
     private Date startTime;
 
     private Date endTime;
 
     private Long during;
 
-    private Integer order;
+    public Long getId() {
+        return id;
+    }
 
-    //标记数据后续处理方式
-    private Integer actionType;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    private String client;
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
 
     public String getDomain() {
         return domain;
@@ -120,14 +142,6 @@ public class Track {
 
     public void setOrder(Integer order) {
         this.order = order;
-    }
-
-    public Integer getActionType() {
-        return actionType;
-    }
-
-    public void setActionType(Integer actionType) {
-        this.actionType = actionType;
     }
 
     public String getClient() {

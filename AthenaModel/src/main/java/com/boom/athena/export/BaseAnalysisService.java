@@ -1,6 +1,4 @@
-/**
- * Created by Administrator on 2016/8/23.
- */
+package com.boom.athena.export;
 
 /**
  * @author chen.xinghu
@@ -10,5 +8,6 @@
 public interface BaseAnalysisService {
 
     //获取某天的
+
 
 }
