@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/AthenaModel/AthenaModel.iml" filepath="$PROJECT_DIR$/AthenaModel/AthenaModel.iml" />
       <module fileurl="file://$PROJECT_DIR$/AthenaService/AthenaService.iml" filepath="$PROJECT_DIR$/AthenaService/AthenaService.iml" />
       <module fileurl="file://$PROJECT_DIR$/AthenaStreamUVHandler/AthenaStreamUVHandler.iml" filepath="$PROJECT_DIR$/AthenaStreamUVHandler/AthenaStreamUVHandler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AthenaStreamUVHandlerModel/AthenaStreamUVHandlerModel.iml" filepath="$PROJECT_DIR$/AthenaStreamUVHandlerModel/AthenaStreamUVHandlerModel.iml" />
     </modules>
   </component>
 </project>

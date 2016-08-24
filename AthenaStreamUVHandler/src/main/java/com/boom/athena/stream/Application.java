@@ -19,7 +19,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  * @date 2016/8/9
  */
 @SpringBootApplication
-@ComponentScan(basePackages = "com.boom.athena")
+@ComponentScan(basePackages = "com.boom.athena.stream")
 public class Application {
 
     @Bean

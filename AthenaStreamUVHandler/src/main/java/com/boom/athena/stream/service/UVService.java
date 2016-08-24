@@ -6,6 +6,8 @@ import com.boom.base.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Set;
+
 /**
  * @author chen.xinghu
  * @comment 炸弹人数据平台
@@ -27,4 +29,12 @@ public class UVService {
     }
 
 
+    public Set getVisitJiao(String now, String other) {
+        return redisService.jiaoSet(now, other);
+    }
+
+
+    public Set getVisit(String now) {
+        return redisService.getSet(now);
+    }
 }

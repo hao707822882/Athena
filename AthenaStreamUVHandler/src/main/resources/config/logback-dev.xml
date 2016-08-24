@@ -13,6 +13,4 @@
     </root>
 
     <logger name="com" level="DEBUG"/>
-
-    <logger name="" level="DEBUG"/>
 </configuration>

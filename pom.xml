@@ -11,6 +11,7 @@
         <module>AthenaModel</module>
         <module>AthenaService</module>
         <module>AthenaStreamUVHandler</module>
+        <module>AthenaStreamUVHandlerModel</module>
     </modules>
     <packaging>pom</packaging>
 
