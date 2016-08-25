@@ -16,7 +16,7 @@ import java.util.Date;
 @Service
 public class KeyService {
 
-    private static SimpleDateFormat withHour = new SimpleDateFormat("yyyy-MM-dd-HH");
+    private static SimpleDateFormat withHour = new SimpleDateFormat("yyyy-MM-dd");
 
     public String getDomainKey(Track track) {
         //项目名
@@ -31,7 +31,11 @@ public class KeyService {
 
     public String getUVOuterKey(String domain, Date date) {
         String hourKey = getDateWithHour(date);
-        return domain + hourKey;
+        return domain + "-" + hourKey;
+    }
+
+    public String getUVOuterKey(String domain, String date) {
+        return domain + "-" + date;
     }
 
 }

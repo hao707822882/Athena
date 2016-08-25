@@ -3,6 +3,7 @@ package com.boom.athena.uvreport.dto;/**
  */
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +13,8 @@ import java.util.List;
  */
 public class ReportItem implements Serializable {
     private String name;
-    private List data;
+
+    private List<Integer> data = new ArrayList<Integer>();
 
     public String getName() {
         return name;
@@ -28,5 +30,18 @@ public class ReportItem implements Serializable {
 
     public void setData(List data) {
         this.data = data;
+    }
+
+
+    public void addDate(Integer integer) {
+        data.add(integer);
+    }
+
+    @Override
+    public String toString() {
+        return "ReportItem{" +
+                "name='" + name + '\'' +
+                ", data=" + data +
+                '}';
     }
 }

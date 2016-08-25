@@ -2,12 +2,18 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AthenaClient" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AthenaModel" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AthenaService" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AthenaService/src/main/java/com/boom/athena/service/ObjectMapperService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/AthenaStreamUVHandler" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AthenaStreamUVHandler/src/main/java/com/boom/athena/stream/service/ObjectMapperService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/AthenaStreamUVHandler/src/main/resources/META-INF" charset="GBK" />
     <file url="file://$PROJECT_DIR$/AthenaStreamUVHandler/src/main/resources/config" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/AthenaStreamUVHandler/src/test/java/com/boom/athena/BaseTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/AthenaStreamUVHandler/src/test/java/com/boom/athena/service/UVHandlerTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/AthenaStreamUVHandler/src/test/resources/config" charset="GBK" />
     <file url="file://$PROJECT_DIR$/AthenaStreamUVHandlerModel" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/doc/boom日志处理系统.xmind" charset="GBK" />
   </component>
 </project>

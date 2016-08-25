@@ -11,10 +11,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author chen.xinghu
@@ -35,15 +32,27 @@ public class UVReportImpl implements UVReport {
         List<Date> datesBetween = DateUtil.getDatesBetween(start, end);
         //从最早的一天开始计算留存率
         //反转date数据
-        List<Date> copy = new ArrayList();
-        BeanUtils.copyProperties(datesBetween, copy);
-        for (Date date : datesBetween) {
+        List<Date> copy = new ArrayList(datesBetween.size());
+        copy.addAll(datesBetween);
+        Collections.reverse(copy);
+        List<ReportItem> reportItems = new ArrayList<ReportItem>(datesBetween.size());
+        for (Date date : copy) {//从最早的一天开始
+            String uvOuterKey = keyService.getUVOuterKey(domain, date);
+            ReportItem reportItem = new ReportItem();
             for (int index = 0; index < copy.size(); index++) {
-                String uvOuterKey = keyService.getUVOuterKey(domain, copy.get(index));
-                
+                Date date1 = copy.get(index);
+                String uvTemp = keyService.getUVOuterKey(domain, date1);
+                Set visitJiao = uvService.getVisitJiao(uvOuterKey, uvTemp);
+                reportItem.setName(uvOuterKey);
+                if (date.getTime() > date1.getTime()) {
+                    reportItem.addDate(0);
+                } else {
+                    reportItem.addDate(visitJiao.size());
+                }
             }
+            reportItems.add(reportItem);
         }
-        return null;
+        return reportItems;
     }
 
     @Override

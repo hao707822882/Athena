@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Athena.iml" filepath="$PROJECT_DIR$/Athena.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AthenaClient/AthenaClient.iml" filepath="$PROJECT_DIR$/AthenaClient/AthenaClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/AthenaModel/AthenaModel.iml" filepath="$PROJECT_DIR$/AthenaModel/AthenaModel.iml" />
       <module fileurl="file://$PROJECT_DIR$/AthenaService/AthenaService.iml" filepath="$PROJECT_DIR$/AthenaService/AthenaService.iml" />
       <module fileurl="file://$PROJECT_DIR$/AthenaStreamUVHandler/AthenaStreamUVHandler.iml" filepath="$PROJECT_DIR$/AthenaStreamUVHandler/AthenaStreamUVHandler.iml" />

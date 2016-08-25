@@ -26,6 +26,7 @@ public class RabbitListener {
 
     private Logger logger = LoggerFactory.getLogger(RabbitListener.class);
 
+    @Autowired
     private RabbitUVHandler rabbitUVHandler;
 
     @org.springframework.amqp.rabbit.annotation.RabbitListener(id = "00", queues = {"uv"})
@@ -37,7 +38,7 @@ public class RabbitListener {
     public void registerHandler02(String info) {
         rabbitUVHandler.handlMessage(info);
     }
-
+    
     @org.springframework.amqp.rabbit.annotation.RabbitListener(id = "02", queues = {"uv"})
     public void registerHandler03(String info) {
         rabbitUVHandler.handlMessage(info);

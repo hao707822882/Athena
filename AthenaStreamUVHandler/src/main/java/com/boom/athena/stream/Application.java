@@ -11,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 /**
@@ -20,6 +21,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  */
 @SpringBootApplication
 @ComponentScan(basePackages = "com.boom.athena.stream")
+@ImportResource("classpath:META-INF/spring/angel-uv-provider.xml")
 public class Application {
 
     @Bean
