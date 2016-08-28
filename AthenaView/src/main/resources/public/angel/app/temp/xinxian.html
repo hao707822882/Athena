@@ -1,0 +1,48 @@
+<section class="scrollable padder">
+
+    <section class="panel panel-default ">
+        <header class="panel-heading">视图列表</header>
+
+        <div class="panel-body">
+            <div class="btn-group btn-group-justified">
+                <a href="javascript:void(0)" class="btn btn-primary" ng-repeat="view in views"
+                   ng-click="showChartList(view)">{{view.name}}</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel panel-default">
+        <header class="panel-heading">
+            图标项目列表
+        </header>
+        <!--<div class="btn-group btn-group-justified">-->
+        <!--<a href="#oneToOneService" class="btn btn-primary">一对一</a>-->
+        <!--<a href="#ssj" class="btn btn-info">生死局</a>-->
+        <!--<a href="#teamFire" class="btn btn-success">团战实训</a>-->
+        <!--</div>-->
+        <br/>
+
+        <div class="btn-group btn-group-justified">
+            <a href="javascript:void(0)" class="btn btn-primary" ng-repeat="indicator in indicators"
+               ng-click="choseChart(indicator)">{{indicator.name}}</a>
+        </div>
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail2">start</label>
+                <input type="text" class="form-control" id="exampleInputEmail2" placeholder="yyyy-MM-dd"
+                       ng-model="start">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputPassword2">end</label>
+                <input type="text" class="form-control" id="exampleInputPassword2" ng-model="end"
+                       placeholder="yyyy-MM-dd">
+            </div>
+            <button ng-click="showChart()" class="btn btn-default">提交</button>
+        </form>
+
+
+        <div id="main" style="height:400px"></div>
+
+    </section>
+
+</section>

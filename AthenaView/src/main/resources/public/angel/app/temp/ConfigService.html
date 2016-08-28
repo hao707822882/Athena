@@ -1,0 +1,56 @@
+<section class="scrollable padder">
+
+    <section class="panel panel-default ">
+        <header class="panel-heading">添加项目</header>
+
+        <div class="panel-body">
+            <form role="form">
+                <div class="form-group">
+                    <label>项目名称</label>
+                    <input type="text" class="form-control" placeholder="项目名称" ng-model="p.name">
+                </div>
+                <div class="form-group">
+                    <label>项目域</label>
+                    <input type="text" class="form-control" placeholder="项目域" ng-model="p.domain">
+                </div>
+                <button class="btn  btn-primary" ng-click="addProject()">添加</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="panel panel-default">
+        <header class="panel-heading">
+            项目列表
+        </header>
+        <!--<div class="btn-group btn-group-justified">-->
+        <!--<a href="#oneToOneService" class="btn btn-primary">一对一</a>-->
+        <!--<a href="#ssj" class="btn btn-info">生死局</a>-->
+        <!--<a href="#teamFire" class="btn btn-success">团战实训</a>-->
+        <!--</div>-->
+        <br/>
+        <table class="table table-striped b-t b-light">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>项目名称</th>
+                <th>项目域</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="project in projects track by $index">
+                <td>{{$index+1}}</td>
+                <td>{{project.name}}</td>
+                <td>{{project.domain}}</td>
+                <td>
+                    <a href="#/view/{{project.id}}">查看视图配置</a>|&nbsp;&nbsp;
+                    <a href="#/viewChart/{{project.id}}">查看视图图表</a>|&nbsp;&nbsp;
+                    <a href="javascript:void(0)" ng-click="del(project)">删除</a>|&nbsp;&nbsp;
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+</section>

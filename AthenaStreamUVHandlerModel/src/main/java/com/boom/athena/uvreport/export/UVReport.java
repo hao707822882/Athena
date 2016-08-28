@@ -18,6 +18,8 @@ public interface UVReport {
     List<ReportItem> getRemainDate(String domain, Date start, Date end);
 
     //获取用户新鲜度数据
-    List<ReportItem> getFreshDate(String domain, Date start, Date end, int interval);
+    List<ReportItem> getFreshDate(String domain, Date start, Date end);
 
+    //获取访问量变化图
+    List<ReportItem> getAllDate(String name, Date start, Date end);
 }

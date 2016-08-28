@@ -29,7 +29,7 @@ public class ObjectMapperService {
         try {
             return objectMapper.readValue(msg, type);
         } catch (Exception e) {
-            logger.error("objectMapper convert msg error ¡¾{}¡¿", msg, e);
+            logger.error("objectMapper convert msg error {}", msg, e);
             return null;
         }
     }
@@ -39,7 +39,7 @@ public class ObjectMapperService {
         try {
             return objectMapper.writeValueAsString(msg);
         } catch (Exception e) {
-            logger.error("objectMapper convert msg error ¡¾{}¡¿", msg, e);
+            logger.error("objectMapper convert msg erro", msg, e);
             return null;
         }
     }

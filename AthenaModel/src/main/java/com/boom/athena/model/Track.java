@@ -24,6 +24,7 @@ public class Track extends MessageBase {
     @Version
     private Long version;
 
+    //项目
     private String domain;
 
     private String name;

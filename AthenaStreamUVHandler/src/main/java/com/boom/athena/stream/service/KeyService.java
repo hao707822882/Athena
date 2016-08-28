@@ -20,7 +20,7 @@ public class KeyService {
 
     public String getDomainKey(Track track) {
         //项目名
-        String domain = track.getDomain();
+        String domain = track.getName();
         return getUVOuterKey(domain, new Date());
     }
 
@@ -29,13 +29,13 @@ public class KeyService {
         return withHour.format(date);
     }
 
-    public String getUVOuterKey(String domain, Date date) {
+    public String getUVOuterKey(String name, Date date) {
         String hourKey = getDateWithHour(date);
-        return domain + "-" + hourKey;
+        return name + "-" + hourKey;
     }
 
-    public String getUVOuterKey(String domain, String date) {
-        return domain + "-" + date;
+    public String getUVOuterKey(String name, String date) {
+        return name + "-" + date;
     }
 
 }

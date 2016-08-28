@@ -24,18 +24,42 @@
         <processorPath useClasspath="true" />
         <module name="AthenaClient" />
         <module name="AthenaModel" />
-        <module name="AthenaService" />
-        <module name="AthenaStreamUVHandler" />
         <module name="AthenaStreamUVHandlerModel" />
+        <module name="ChatHotHandler" />
+        <module name="ChatHotHandlerModel" />
+      </profile>
+      <profile default="false" name="Annotation profile for AthenaStreamUVHandler" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="AthenaStreamUVHandler" />
+      </profile>
+      <profile default="false" name="Annotation profile for AthenaService" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="AthenaService" />
+      </profile>
+      <profile default="false" name="Annotation profile for AthenaView" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="AthenaView" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7">
+    <bytecodeTargetLevel>
       <module name="Athena" target="1.6" />
       <module name="AthenaClient" target="1.6" />
       <module name="AthenaModel" target="1.6" />
-      <module name="AthenaService" target="1.6" />
-      <module name="AthenaStreamUVHandler" target="1.6" />
+      <module name="AthenaService" target="1.8" />
+      <module name="AthenaStreamUVHandler" target="1.8" />
       <module name="AthenaStreamUVHandlerModel" target="1.6" />
+      <module name="AthenaView" target="1.8" />
+      <module name="ChatHotHandler" target="1.6" />
+      <module name="ChatHotHandlerModel" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

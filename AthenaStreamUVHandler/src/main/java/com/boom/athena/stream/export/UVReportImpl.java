@@ -56,8 +56,54 @@ public class UVReportImpl implements UVReport {
     }
 
     @Override
-    public List<ReportItem> getFreshDate(String domain, Date start, Date end, int interval) {
+    public List<ReportItem> getFreshDate(String domain, Date start, Date end) {
+        if (end == null) {
+            end = new Date();
+        }
+        List<Date> datesBetween = DateUtil.getDatesBetween(start, end);
+        List<Date> copy = new ArrayList(datesBetween.size());
+        copy.addAll(datesBetween);
+        Collections.reverse(copy);
+        String outer = keyService.getUVOuterKey(domain, start);
+        List<ReportItem> reportItems = new ArrayList<>();
+        ReportItem reportItem = new ReportItem();
+        reportItem.setName(outer);
+        List list = new ArrayList<>();
+        for (Date date : copy) {
+            String in = keyService.getUVOuterKey(domain, date);
+            boolean sameDate = DateUtil.isSameDate(date, start);
+            if (sameDate) {
+                Set visit = uvService.getVisit(outer);
+                list.add(visit.size());
+            } else {
+                Set cha = uvService.getNew(in, outer);
+                list.add(cha.size());
+            }
+        }
+        reportItem.setData(list);
+        reportItems.add(reportItem);
+        return reportItems;
+    }
 
-        return null;
+    @Override
+    public List<ReportItem> getAllDate(String name, Date start, Date end) {
+        List<Date> datesBetween = DateUtil.getDatesBetween(start, end);
+        List<Date> copy = new ArrayList(datesBetween.size());
+        copy.addAll(datesBetween);
+        Collections.reverse(copy);
+
+        String outer = keyService.getUVOuterKey(name, start);
+        List<ReportItem> reportItems = new ArrayList<>();
+        ReportItem reportItem = new ReportItem();
+        reportItem.setName(outer);
+        List list = new ArrayList<>();
+        for (Date date : copy) {
+            String in = keyService.getUVOuterKey(name, date);
+            Set visit = uvService.getVisit(in);
+            list.add(visit.size());
+        }
+        reportItem.setData(list);
+        reportItems.add(reportItem);
+        return reportItems;
     }
 }

@@ -37,4 +37,8 @@ public class UVService {
     public Set getVisit(String now) {
         return redisService.getSet(now);
     }
+
+    public Set getNew(String outer, String in) {
+        return redisService.chaSet(outer,in);
+    }
 }

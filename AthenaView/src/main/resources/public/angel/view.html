@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视图展现</title>
+    <script src="echart/echarts-all.js"></script>
+    <link rel="stylesheet" href="datapicker/css/BeatPicker.min.css"/>
+    <script src="datapicker/js/jquery-1.11.0.min.js"></script>
+    <script src="datapicker/js/BeatPicker.min.js"></script>
+</head>
+<body>
+<script>
+
+</script>
+
+<input type="text" id="calendar" data-beatpicker="true" data-beatpicker-module="today,clear">
+
+
+<div id="main" style="height:400px"></div>
+<script>
+
+    function show() {
+        // 基于准备好的dom，初始化echarts图表
+        var myChart = echarts.init(document.getElementById('main'))
+
+        $.getJSON("http://localhost:9999/admin/remain?name=school&start=2015-08-20&end=2015-08-22", function (data) {
+            var option = setDate("school应用房客留存", data.data);
+            myChart.setOption(option);
+        })
+
+        function setDate(title, data) {
+            var columns = [];
+            var xs = [];
+            for (var a = 0; a < data.length; a++) {
+                data[a].type = 'line';
+                columns.push(data[a].name);
+                var nameSplit = data[a].name.split("-");
+                xs.push(nameSplit[1] + "-" + nameSplit[2])
+            }
+            var option = {
+                title: {
+                    text: title,
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: columns,
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: {show: true},
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                calculable: true,
+                xAxis: [
+                    {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: xs
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value'
+                    }
+                ],
+                series: data
+            };
+            return option;
+        }
+    }
+    show();
+</script>
+</body>
+</html>

@@ -40,9 +40,9 @@ public class RabbitUVHandler {
         if (convert == null) {
             logger.warn("msg can not to Track 【{}】", info);
         }
+        //获取当前类别的名字
         String domainKey = keyService.getDomainKey(convert);
         uvService.setVisit(domainKey, convert.getValue());
     }
-
 
 }

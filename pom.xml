@@ -13,6 +13,9 @@
         <module>AthenaStreamUVHandler</module>
         <module>AthenaStreamUVHandlerModel</module>
         <module>AthenaClient</module>
+        <module>AthenaView</module>
+        <module>ChatHotHandler</module>
+        <module>ChatHotHandlerModel</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -35,7 +38,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.35</version>
+        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>

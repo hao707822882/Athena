@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/AthenaService/AthenaService.iml" filepath="$PROJECT_DIR$/AthenaService/AthenaService.iml" />
       <module fileurl="file://$PROJECT_DIR$/AthenaStreamUVHandler/AthenaStreamUVHandler.iml" filepath="$PROJECT_DIR$/AthenaStreamUVHandler/AthenaStreamUVHandler.iml" />
       <module fileurl="file://$PROJECT_DIR$/AthenaStreamUVHandlerModel/AthenaStreamUVHandlerModel.iml" filepath="$PROJECT_DIR$/AthenaStreamUVHandlerModel/AthenaStreamUVHandlerModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AthenaView/AthenaView.iml" filepath="$PROJECT_DIR$/AthenaView/AthenaView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChatHotHandler/ChatHotHandler.iml" filepath="$PROJECT_DIR$/ChatHotHandler/ChatHotHandler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChatHotHandlerModel/ChatHotHandlerModel.iml" filepath="$PROJECT_DIR$/ChatHotHandlerModel/ChatHotHandlerModel.iml" />
     </modules>
   </component>
 </project>
