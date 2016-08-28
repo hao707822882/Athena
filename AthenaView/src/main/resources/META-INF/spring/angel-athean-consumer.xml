@@ -5,16 +5,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
     http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="uv" owner="zmm" organization="boom"/>
+    <dubbo:application name="teach" owner="zmm" organization="boom"/>
 
     <dubbo:registry address="zookeeper://10.46.66.33:2181"/>
     <!--<dubbo:registry address="zookeeper://127.0.0.1:2181"/>-->
 
-
     <dubbo:consumer check="false"></dubbo:consumer>
 
-    <dubbo:service interface="com.boom.athena.uvreport.export.UVReport"
-                   ref="UVReportImpl"
-                   protocol="dubbo"/>
+
+    <!--BooM User-->
+    <dubbo:reference id="userService" interface="com.boom.angel.user.export.UserService" check="false"/>
+
+
+    <!--游戏服务-->
+    <dubbo:reference id="gameExport"
+                     interface="com.boom.athena.uvreport.export.UVReport" check="false"
+                     timeout="10000"/>
+
 
 </beans>
