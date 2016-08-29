@@ -69,6 +69,7 @@ public class UVReportImpl implements UVReport {
         ReportItem reportItem = new ReportItem();
         reportItem.setName(outer);
         List list = new ArrayList<>();
+        List<Date> leftDate = new ArrayList<>();
         for (Date date : copy) {
             String in = keyService.getUVOuterKey(domain, date);
             boolean sameDate = DateUtil.isSameDate(date, start);
@@ -76,9 +77,14 @@ public class UVReportImpl implements UVReport {
                 Set visit = uvService.getVisit(outer);
                 list.add(visit.size());
             } else {
-                Set cha = uvService.getNew(in, outer);
-                list.add(cha.size());
+                List<String> keys = new ArrayList<>();
+                for (Date date1 : leftDate) {
+                    keys.add(keyService.getUVOuterKey(domain, date1));
+                }
+                Set visit = uvService.getNew(in, keys);
+                list.add(visit.size());
             }
+            leftDate.add(date);
         }
         reportItem.setData(list);
         reportItems.add(reportItem);

@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public interface TearmDetailDao extends JpaRepository<TearmDetail, Long> {
 
-    @Query(value = "select tearm,count(id) from tearm_detail where add_date BETWEEN :start AND :end  group by tearm", nativeQuery = true)
+    @Query(value = "select tearm,count(id) a from tearm_detail where add_date BETWEEN :start AND :end  group by tearm order by a desc", nativeQuery = true)
     List teramCountByGroup(@Param("start") Date start, @Param("end") Date end);
 
 }

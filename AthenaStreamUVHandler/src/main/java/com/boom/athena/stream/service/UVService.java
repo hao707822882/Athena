@@ -6,6 +6,7 @@ import com.boom.base.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.Set;
 
 /**
@@ -39,6 +40,12 @@ public class UVService {
     }
 
     public Set getNew(String outer, String in) {
-        return redisService.chaSet(outer,in);
+        return redisService.chaSet(outer, in);
     }
+
+    public Set getNew(String in, Collection<String> data) {
+        return redisService.chaSet(in, data);
+    }
+
+
 }
