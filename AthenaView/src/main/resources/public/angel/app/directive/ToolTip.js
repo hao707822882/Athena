@@ -24,6 +24,37 @@ myAppModule.directive("tipq", function (StudentService) {
 )
 
 /**
+ * 时间转换器
+ */
+myAppModule.directive("datePicker", function () {
+        return {
+            restrict: 'A',
+            replace: true,
+            require: 'ngModel',
+            link: function ($scope, $element, $attrs, ngmodel) {//注册事件监测
+
+                $($element).asDatepicker({
+                    namespace: 'calendar',
+                    lang: 'zh',
+                    position: 'top',
+                    onChange: function (arge) {
+                        if (!$scope.$$phase) {
+                            $scope.$apply(function () {
+                                //html格式的
+                                ngmodel.$setViewValue(arge[0]);
+                                //设置文本格式
+                                console.log(arge)
+                            });
+                        }
+
+                    }
+                });
+            }
+        }
+    }
+)
+
+/**
  * 展示学员的评论
  */
 myAppModule.directive("tipe", function () {

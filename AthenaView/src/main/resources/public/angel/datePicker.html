@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视图展现</title>
+
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="asDatepicker/css/asDatepicker.css" type="text/css"/>
+    <script src="asDatepicker/js/jquery.toc.min.js"></script>
+    <script src="asDatepicker/js/jquery-asDatepicker.js"></script>
+    <script src="asDatepicker/js/language.js"></script>
+</head>
+<body>
+
+
+<input type="text" id="calendar">
+<script>
+    $(document).ready(function () {
+        $("#calendar").asDatepicker({
+            namespace: 'calendar',
+            lang: 'zh',
+            position: 'top',
+            on_change: function () {
+                alert("000")
+            }
+        });
+    });
+</script>
+</body>
+</html>
